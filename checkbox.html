@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary" onclick="doSave();">Save</button>
+        <div>
+            <label class="form-check-lavel form-check-inline"><input name='chk_lang' type="checkbox" value ='html'>HTML</label>
+            <label class="form-check-lavel form-check-inline"><input name='chk_lang' type="checkbox"value ='js'>javrScript</label>
+            <label class="form-check-lavel form-check-inline"><input name='chk_lang' type="checkbox"value ='vue'>Vue</label>
+            <label class="form-check-lavel form-check-inline"><input name='chk_lang' type="checkbox"value ='react'>React.js</label>
+            <label class="form-check-lavel form-check-inline"><input name='chk_lang' type="checkbox"value ='angular'>Angular</label>
+        
+        </div>
+    </div>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th><input type='checkbox' id="chkall" onclick="checkAll();"></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type='checkbox' name="chk"  value='0'></td>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' name="chk" value='1'></td>
+                <td>A2</td>
+                <td>B2</td>
+                <td>C2</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' name="chk"  value='2'></td>
+                <td>A3</td>
+                <td>B3</td>
+                <td>C3</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' name="chk"  value='3'></td>
+                <td>A4</td>
+                <td>B4</td>
+                <td>C4</td>>
+            </tr>
+            <tr>
+                <td><input type='checkbox' name="chk"  value='4'></td>
+                <td>A5</td>
+                <td>B5</td>
+                <td>C5</td>
+            </tr>
+        </tbody>
+
+    </table>
+    
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script>
+
+    
+   function doSave(){
+        let chk_langs = document.getElementsByName('chk_lang');
+        console.log(chk_langs);
+        let checked_lang_items =[];
+        for(let i=0; i < chk_langs.length;i++){
+            if(chk_langs[i].checked){
+                checked_lang_items.push(chk_langs[i].value);
+            }
+        }
+        let chk = document.querySelectorAll('input[name="chk"]');
+        let arr = [];
+        let arr2 = [];
+        for(let i = 0; i < chk.length;i++){
+            if(chk[i].checked){
+                 arr.push(chk[i].value);   
+                 arr2.push(chk[i].parentElement.parentElement.children[1].textContent);
+                 arr2.push(chk[i].parentElement.parentElement.children[2].textContent);
+                 arr2.push(chk[i].parentElement.parentElement.children[3].textContent);
+            
+            }
+        }
+        console.log("arr" + arr);
+        console.log("arr2" + arr2);
+
+   };
+
+   function checkAll(){
+
+
+    let chkall = document.querySelector('#chkall').checked;
+ 
+           let chk = document.querySelectorAll('input[name="chk"]');
+           for(let i =0; i < chk.length;i++){
+            chk[i].checked = chkall;
+          
+
+       }
+      
+   }
+
+  
+</script>
+</html>
