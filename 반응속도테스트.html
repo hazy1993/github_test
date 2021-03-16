@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #screen{
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        font-size: 40px;
+        user-select: none;
+       
+    }
+
+    #screen.waiting{
+        background-color: aqua;
+        color: white;
+    }
+    #screen.ready{
+        background-color: red;
+       
+
+    }
+    #screen.now{
+        background-color: greenyellow;
+
+    }
+
+    #screen.out{
+        background-color: blueviolet;
+
+    }
+
+    #screen.result{
+        background-color: darkorange;
+
+    }
+
+</style>
+
+<body>
+    <div id='screen' class='waiting'>클릭해서 시작하세요</div>
+</body>
+<script src='반응속도테스트.js'></script>
+</html>
